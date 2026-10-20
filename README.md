@@ -4,7 +4,7 @@ Modernización y rediseño de la plataforma web institucional del **Instituto de
 
 ---
 
-## 📌 Descripción del Proyecto
+## Descripción del Proyecto
 
 El objetivo principal es transformar el portal institucional tradicional en una experiencia web moderna, accesible, rápida y optimizada para multiples dispositivos (smartphones, tablets, PCs), orientada a la atracción de postulantes y usuarios mediante tecnologías de vanguardia y un diseño UI/UX/DX limpio y profesional.
 
@@ -23,7 +23,7 @@ El objetivo principal es transformar el portal institucional tradicional en una 
 
 ---
 
-## 🛠️ Stack Tecnológico
+## Stack Tecnológico
 
 - **Frontend**: [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
 - **Estilos**: [Tailwind CSS v4](https://tailwindcss.com/) (motor nativo `@tailwindcss/vite`)
@@ -33,7 +33,7 @@ El objetivo principal es transformar el portal institucional tradicional en una 
 
 ---
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```text
 src/
@@ -60,7 +60,7 @@ src/
 
 ---
 
-## 📚 Documentación Técnica Detallada (`docs/`)
+## Documentación Técnica Detallada (`docs/`)
 
 Para profundizar en los aspectos arquitectónicos, diseño y módulos del portal, consulta los documentos especializados:
 
@@ -110,7 +110,7 @@ Puedes utilizar **pnpm** (recomendado por `.mise.toml`) o **npm**:
 
 ---
 
-## 🏛️ Información Institucional
+## Información Institucional
 
 - **Institución**: IESP "Huanta" (IESPH)
 - **Código Modular MINEDU**: 0434779
