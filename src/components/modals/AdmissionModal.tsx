@@ -54,7 +54,7 @@ export default function AdmissionModal({
       `¡Hola! Mi nombre es ${fullName}. Deseo solicitar información sobre la Convocatoria de Admisión 2026 para el programa de ${selectedCareer || "educación técnica"}. Mi número de contacto es ${phone}.`,
     )
     window.open(
-      `https://wa.me/${INSTITUTION_CONTACT.whatsappRaw}?text=${message}`,
+      `https://wa.me/${INSTITUTION_CONTACT.whatsapp}?text=${message}`,
       "_blank",
       "noopener,noreferrer",
     )
