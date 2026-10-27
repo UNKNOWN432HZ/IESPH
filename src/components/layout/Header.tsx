@@ -53,10 +53,10 @@ export default function Header({
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 dark:bg-slate-950/95 backdrop-blur-md shadow-xs font-sans transition-colors">
+    <header className="sticky top-0 z-50 bg-white/95 dark:bg-slate-950/95 backdrop-blur-md shadow-xs font-sans transition-colors w-full overflow-x-clip">
       {/* ── Top Utility Bar: Solo en tablets y escritorios (hidden sm:block) ───────────────── */}
-      <div className="hidden sm:block bg-slate-100 dark:bg-[#0b1a2c] text-slate-600 dark:text-slate-300 text-xs py-1.5 sm:py-2 px-3 sm:px-4 border-b border-slate-200 dark:border-slate-800/80 transition-colors">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
+      <div className="hidden sm:block bg-slate-100 dark:bg-[#0b1a2c] text-slate-600 dark:text-slate-300 text-xs py-1.5 sm:py-2 px-4 sm:px-6 lg:px-8 border-b border-slate-200 dark:border-slate-800/80 transition-colors">
+        <div className="w-full max-w-[1440px] mx-auto flex items-center justify-between gap-3">
           {/* Contact info with clean SVGs */}
           <div className="flex items-center gap-2.5 sm:gap-5 text-xs">
             <a
@@ -135,7 +135,7 @@ export default function Header({
       </div>
 
       {/* ── Main Navigation Bar ────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 h-18 sm:h-20 flex items-center justify-between gap-3">
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-3 sm:gap-4">
         {/* Brand identity */}
         <a
           href="/"
@@ -150,8 +150,7 @@ export default function Header({
           {/* Solo visible en tablets y escritorios (>= sm). En móvil solo se muestra el logo */}
           <div className="hidden sm:block leading-tight">
             <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-              <span className="hidden 2xl:inline"> </span>INSTITUTO DE EDUCACIÓN
-              SUPERIOR PÚBLICO
+              INSTITUTO DE EDUCACIÓN SUPERIOR PÚBLICO
             </div>
             <div className="text-base sm:text-lg xl:text-xl font-black tracking-tight text-slate-900 dark:text-white group-hover:text-blue-900 dark:group-hover:text-sky-400 transition-colors">
               HUANTA
@@ -188,14 +187,7 @@ export default function Header({
                       : "text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/80"
                   }`}
                 >
-                  {item.shortLabel ? (
-                    <>
-                      <span className="2xl:hidden">{item.shortLabel}</span>
-                      <span className="hidden 2xl:inline">{item.label}</span>
-                    </>
-                  ) : (
-                    item.label
-                  )}
+                  <span>{item.label}</span>
                   {item.children && (
                     <svg
                       className={`w-3 h-3 xl:w-3.5 xl:h-3.5 transition-transform duration-200 ${
@@ -286,10 +278,9 @@ export default function Header({
               e.preventDefault()
               onOpenApplyModal?.()
             }}
-            className="inline-flex items-center gap-1.5 bg-slate-900 dark:bg-sky-600 hover:bg-slate-800 dark:hover:bg-sky-500 text-white text-xs sm:text-sm font-bold px-3 sm:px-4 2xl:px-5 py-2 sm:py-2.5 min-h-9.5 sm:min-h-11 rounded-lg shadow-xs transition-colors shrink-0 whitespace-nowrap"
+            className="inline-flex items-center gap-1.5 bg-slate-900 dark:bg-sky-600 hover:bg-slate-800 dark:hover:bg-sky-500 text-white text-xs sm:text-sm font-bold px-3.5 sm:px-4 py-2 sm:py-2.5 min-h-9.5 sm:min-h-11 rounded-lg shadow-xs transition-colors shrink-0 whitespace-nowrap"
           >
-            <span>Postula</span>
-            <span className="hidden 2xl:inline"> en Línea</span>
+            <span>Postula en Línea</span>
             <span>→</span>
           </a>
 

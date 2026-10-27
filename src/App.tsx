@@ -20,11 +20,15 @@ const ComplaintsBookModal = lazy(
   () => import("@/components/modals/ComplaintsBookModal"),
 )
 const VideoModal = lazy(() => import("@/components/modals/VideoModal"))
+const PaperPlaneAnnouncementModal = lazy(
+  () => import("@/components/modals/PaperPlaneAnnouncementModal"),
+)
 
 export default function App() {
   const [currentCareerId, setCurrentCareerId] = useState<string | null>(null)
   const [complaintsModalOpen, setComplaintsModalOpen] = useState(false)
   const [admissionModalOpen, setAdmissionModalOpen] = useState(false)
+  const [announcementModalOpen, setAnnouncementModalOpen] = useState(false)
   const [selectedCareerForApply, setSelectedCareerForApply] = useState<
     string | undefined
   >()
@@ -52,6 +56,8 @@ export default function App() {
           setComplaintsModalOpen(true)
         } else if (path === "/postular" || hash === "#postular") {
           setAdmissionModalOpen(true)
+        } else if (path === "/comunicado" || hash === "#comunicado") {
+          setAnnouncementModalOpen(true)
         } else {
           setComplaintsModalOpen(false)
           const targetId = hash
@@ -81,11 +87,16 @@ export default function App() {
       setComplaintsModalOpen(true)
     }
 
+    const handleOpenAnnouncement = () => {
+      setAnnouncementModalOpen(true)
+    }
+
     // Handle initial route on mount
     handlePopState()
 
     window.addEventListener("popstate", handlePopState)
     window.addEventListener("open-complaints-modal", handleOpenModal)
+    window.addEventListener("open-announcement-modal", handleOpenAnnouncement)
 
     // Global click interceptor for clean internal paths (/carreras, /admision, etc.)
     const handleDocumentClick = (e: MouseEvent) => {
@@ -112,7 +123,25 @@ export default function App() {
     return () => {
       window.removeEventListener("popstate", handlePopState)
       window.removeEventListener("open-complaints-modal", handleOpenModal)
+      window.removeEventListener(
+        "open-announcement-modal",
+        handleOpenAnnouncement,
+      )
       document.removeEventListener("click", handleDocumentClick)
+    }
+  }, [])
+
+  // Auto-disparo elegante del comunicado tras 1.8 segundos en la primera visita de sesión
+  useEffect(() => {
+    if (window.location.pathname.startsWith("/carreras/")) return
+
+    const hasSeen = sessionStorage.getItem("iesph_announcement_seen")
+    if (!hasSeen) {
+      const timer = setTimeout(() => {
+        setAnnouncementModalOpen(true)
+        sessionStorage.setItem("iesph_announcement_seen", "true")
+      }, 1800)
+      return () => clearTimeout(timer)
     }
   }, [])
 
@@ -147,6 +176,7 @@ export default function App() {
               onCareerSelect={(careerName) => handleOpenApplyModal(careerName)}
               onOpenApplyModal={() => handleOpenApplyModal()}
               onOpenVideoModal={() => setVideoModalOpen(true)}
+              onOpenAnnouncementModal={() => setAnnouncementModalOpen(true)}
             />
 
             {/* Franja de Métricas Institucionales */}
@@ -190,6 +220,25 @@ export default function App() {
 
       {/* ── Modales cargados bajo demanda con Suspense ───────────── */}
       <Suspense fallback={null}>
+        {announcementModalOpen && (
+          <PaperPlaneAnnouncementModal
+            isOpen={announcementModalOpen}
+            onClose={() => {
+              setAnnouncementModalOpen(false)
+              if (
+                window.location.pathname === "/comunicado" ||
+                window.location.hash === "#comunicado"
+              ) {
+                window.history.pushState(null, "", "/")
+              }
+            }}
+            onActionClick={() => {
+              const el = document.getElementById("noticias")
+              if (el) el.scrollIntoView({ behavior: "smooth" })
+            }}
+          />
+        )}
+
         {admissionModalOpen && (
           <AdmissionModal
             isOpen={admissionModalOpen}

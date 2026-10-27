@@ -6,6 +6,7 @@ import {
   FlaskConical,
   Maximize2,
   Play,
+  Send,
   Stethoscope,
   TreePine,
   Volume2,
@@ -24,6 +25,7 @@ interface HeroSectionProps {
   onCareerSelect?: (careerName: string) => void
   onOpenApplyModal?: () => void
   onOpenVideoModal?: () => void
+  onOpenAnnouncementModal?: () => void
 }
 
 interface HeroSlide {
@@ -108,6 +110,7 @@ export default function HeroSection({
   onCareerSelect,
   onOpenApplyModal,
   onOpenVideoModal,
+  onOpenAnnouncementModal,
 }: HeroSectionProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
@@ -317,6 +320,17 @@ export default function HeroSection({
                 >
                   {activeSlide.ctaSecondaryText}
                 </a>
+
+                {onOpenAnnouncementModal && (
+                  <button
+                    type="button"
+                    onClick={() => onOpenAnnouncementModal()}
+                    className="px-4 py-3.5 rounded-full bg-white/10 hover:bg-white/20 dark:bg-white/5 dark:hover:bg-white/15 text-slate-100 hover:text-white text-xs sm:text-sm font-semibold backdrop-blur-md border border-white/20 hover:border-white/35 transition-all cursor-pointer inline-flex items-center gap-2 shadow-xs group"
+                  >
+                    <Send className="w-3.5 h-3.5 text-[#08D9FF] group-hover:rotate-12 transition-transform" />
+                    <span>Ver Comunicado</span>
+                  </button>
+                )}
               </div>
             </div>
 
