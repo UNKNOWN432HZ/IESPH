@@ -41,97 +41,127 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
     ],
   },
   {
-    label: "Programas de Estudio",
+    label: "Programas de estudios",
     shortLabel: "Carreras",
     href: "/carreras",
     children: [
       {
         label: "Diseño y Programación Web",
         href: "/carreras/diseno-programacion-web",
-        description: "Tecnologías digitales y software",
       },
       {
         label: "Enfermería Técnica",
         href: "/carreras/enfermeria-tecnica",
-        description: "Ciencia del cuidado y salud asistencial",
       },
       {
         label: "Mecatrónica Automotriz",
         href: "/carreras/mecatronica-automotriz",
-        description: "Diagnóstico electrónico y sistemas vehiculares",
       },
       {
         label: "Industrias de Alimentos y Bebidas",
         href: "/carreras/industrias-alimentos-bebidas",
-        description: "Transformación agroindustrial y control HACCP",
       },
       {
         label: "Producción Agropecuaria",
         href: "/carreras/produccion-agropecuaria",
-        description: "Agricultura tecnificada y sanidad pecuaria",
       },
     ],
   },
   {
-    label: "Admisión 2026",
+    label: "Admisión y Matricula",
     shortLabel: "Admisión",
     href: "/admision",
     children: [
       {
-        label: "Proceso de Admisión 2026",
+        label: "Admisión 2026",
         href: "/admision",
-        description: "Cronograma, vacantes y pasos",
       },
       {
-        label: "Modalidades de Ingreso",
+        label: "Matrícula",
         href: "/admision",
-        description: "Ordinario, Exonerados y Beca 18",
       },
       {
-        label: "Requisitos de Inscripción",
-        href: "/admision",
-        description: "Documentos para postular",
-      },
-      {
-        label: "Matrícula Oficial",
-        href: "/admision",
-        description: "Guía para estudiantes ingresantes",
+        label: "Becas y Créditos",
+        href: "https://www.gob.pe/pronabec",
       },
     ],
+  },
+  {
+    label: "Transparencia",
+    shortLabel: "Transparencia",
+    href: "/transparencia",
+    children: [
+      {
+        label: "Documentos de Gestión",
+        href: "/docs/PEI-IESPH.pdf",
+      },
+      {
+        label: "Estadísticas",
+        href: "/transparencia",
+      },
+      {
+        label: "Inversiones y Recursos Económicos",
+        href: "/transparencia",
+      },
+      {
+        label: "Libro de reclamaciones",
+        href: "/libro-de-reclamaciones",
+      },
+      {
+        label: "Licenciamiento",
+        href: "/docs/Licenciamiento-RMN371-2025-MINEDU.pdf",
+      },
+    ],
+  },
+  {
+    label: "Tramite",
+    shortLabel: "Trámite",
+    href: "/tramite",
+    children: [
+      {
+        label: "TUPA",
+        href: "/docs/TUPA-IESPH.pdf",
+      },
+    ],
+  },
+  {
+    label: "Contáctanos",
+    shortLabel: "Contacto",
+    href: "/contacto",
   },
   {
     label: "Servicios",
+    shortLabel: "Servicios",
     href: "/servicios",
     children: [
       {
-        label: "Laboratorios y Talleres",
+        label: "Biblioteca",
         href: "/servicios",
-        description: "Equipamiento tecnológico",
       },
       {
-        label: "Biblioteca Institucional",
+        label: "Servicios complementarios",
         href: "/servicios",
-        description: "Catálogo bibliográfico",
       },
       {
-        label: "Bolsa Laboral y Convenios",
-        href: "/servicios",
-        description: "Alianzas con empresas",
-      },
-      {
-        label: "Libro de Reclamaciones",
-        href: "/libro-de-reclamaciones",
-        description: "Atención de sugerencias y reclamos",
+        label: "Bolsa Laboral",
+        href: "https://avanza.minedu.gob.pe/",
       },
     ],
   },
   {
-    label: "Noticias",
-    href: "/noticias",
-  },
-  {
-    label: "Contacto",
-    href: "/contacto",
+    label: "Otras páginas",
+    shortLabel: "Enlaces",
+    href: "/enlaces",
+    children: [
+      {
+        label: "Links Institucionales",
+        href: "https://iestphuanta.sistema.edu.pe/login/",
+      },
+      {
+        label: "Noticias",
+        href: "/noticias",
+      },
+    ],
   },
 ]
 

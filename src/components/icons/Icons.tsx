@@ -98,6 +98,47 @@ export function IconMail({ className = "w-4 h-4" }: { className?: string }) {
   return <Mail className={className} />
 }
 
+export function IconLocationMap({
+  className = "w-4 h-4",
+}: {
+  className?: string
+}) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
+      <line x1="9" x2="9" y1="3" y2="18" />
+      <line x1="15" x2="15" y1="6" y2="21" />
+      <circle cx="15" cy="11" r="2.5" fill="#7114EF" stroke="none" />
+    </svg>
+  )
+}
+
+export function IconFacebook({
+  className = "w-4 h-4",
+}: {
+  className?: string
+}) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.52-.14-2.83-.14-2.8 0-4.67 1.71-4.67 4.8v2.7H7v4h3V22h4v-8.5z" />
+    </svg>
+  )
+}
+
 export function IconCheck({ className = "w-4 h-4" }: { className?: string }) {
   return <Check className={className} />
 }
